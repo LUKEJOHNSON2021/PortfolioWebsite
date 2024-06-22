@@ -35,16 +35,17 @@ export default function ProjectScreen() {
         { name: "TypeScript", color: "#2661B9" },
         { name: "Material-UI", color: "#1976D2" },
       ],
+      link: "https://github.com/LUKEJOHNSON2021/PortfolioWebsite",
     },
     {
       id: 2,
-      title: "Project 2",
-      description: "Description of Project 2",
+      title: "Sync Up",
+      description:
+        "Sync Up is a mobile app created for the Warren Project, a charity in Hull, that provides information about events in the local area depending on the user's interests.",
       img: "https://via.placeholder.com/300",
       chips: [
-        { name: "React", color: "#58C4DC" },
+        { name: "React-Native", color: "#58C4DC" },
         { name: "TypeScript", color: "#2661B9" },
-        { name: "Material-UI", color: "#1976D2" },
       ],
     },
     {
@@ -109,7 +110,7 @@ export default function ProjectScreen() {
         <Grid container spacing={3} justifyContent="center">
           {projects.map((project) => (
             <Grid item key={project.id} xs={12} sm={6} md={5} lg={4} style={{ display: "flex", justifyContent: "center" }}>
-              <ProjectItem title={project.title} description={project.description} img={project.img} chips={project.chips} />
+              <ProjectItem title={project.title} description={project.description} img={project.img} chips={project.chips} link={project.link} />
             </Grid>
           ))}
         </Grid>

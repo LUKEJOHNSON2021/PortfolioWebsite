@@ -21,9 +21,10 @@ interface ProjectItemProps {
   description: string;
   img?: string;
   chips: IChips[];
+  link?: string;
 }
 
-export default function ProjectItem({ title, description, img, chips }: ProjectItemProps) {
+export default function ProjectItem({ title, description, img, chips, link }: ProjectItemProps) {
   return (
     <motion.div variants={itemVariants} style={{ padding: 10, height: "100%", display: "flex", flexDirection: "column" }}>
       <Card
@@ -43,11 +44,13 @@ export default function ProjectItem({ title, description, img, chips }: ProjectI
             <Typography variant="h5" color="textSecondary">
               {title}
             </Typography>
-            <Tooltip title="Github">
-              <IconButton href="https://github.com/LUKEJOHNSON2021" target="_blank">
-                <FaGithub fontSize={30} color={"black"} />
-              </IconButton>
-            </Tooltip>
+            {link && (
+              <Tooltip title="Github">
+                <IconButton href={link} target="_blank">
+                  <FaGithub fontSize={30} color={"black"} />
+                </IconButton>
+              </Tooltip>
+            )}
           </div>
           <div>
             <Typography variant="caption" color="textSecondary" component="p">
