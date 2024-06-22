@@ -1,14 +1,43 @@
+import { motion } from "framer-motion";
 import "./LandingScreen.css";
 
 export default function LandingScreen() {
+  const titleText = "I'm Luke Johnson".split(" ");
+  const subHeadingText = "A Graduate from the University of Hull with a First Class Degree in Computer Science (Software Engineering)".split(" ");
   return (
-    <div>
-      <div className="gradient_background">
+    <div className="gradient_background">
+      <div>
         <div>
-          <h1 className="top_bar_text">I'm Luke Johnson</h1>
-          <h2 className="top_bar_secondary_text">
-            A Graduate from the University of Hull with a First Class Degree in Computer Science (Software Engineering)
-          </h2>
+          {titleText.map((el, i) => (
+            <motion.span
+              className="top_bar_text"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{
+                duration: 0.25,
+                delay: i / 10,
+              }}
+              key={i}
+            >
+              {el}{" "}
+            </motion.span>
+          ))}
+        </div>
+        <div>
+          {subHeadingText.map((el, i) => (
+            <motion.span
+              className="top_bar_secondary_text"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{
+                duration: 0.25,
+                delay: i / 10,
+              }}
+              key={i}
+            >
+              {el}{" "}
+            </motion.span>
+          ))}
         </div>
       </div>
     </div>
