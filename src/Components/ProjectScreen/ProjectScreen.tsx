@@ -1,19 +1,119 @@
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
+import { Container, Grid } from "@mui/material";
+import ProjectItem from "../ProjectItem/ProjectItem";
 
 import "./ProjectScreen.css";
 
+const containerVariants = {
+  hidden: { opacity: 0, scale: 0 },
+  visible: {
+    opacity: 1,
+    scale: 1,
+    transition: {
+      delayChildren: 0.3,
+      staggerChildren: 0.2,
+    },
+  },
+};
+
 export default function ProjectScreen() {
   const { ref, inView } = useInView({
-    triggerOnce: true, // Trigger the animation only once
-    threshold: 0.1, // Trigger when 10% of the element is in view
+    triggerOnce: true,
+    threshold: 0.1,
   });
 
+  // Sample project data
+  const projects = [
+    {
+      id: 1,
+      title: "Portfolio Website",
+      description: "A portfolio website built to showcase my projects and skills.",
+      img: "https://via.placeholder.com/300",
+      chips: [
+        { name: "React", color: "#58C4DC" },
+        { name: "TypeScript", color: "#2661B9" },
+        { name: "Material-UI", color: "#1976D2" },
+      ],
+    },
+    {
+      id: 2,
+      title: "Project 2",
+      description: "Description of Project 2",
+      img: "https://via.placeholder.com/300",
+      chips: [
+        { name: "React", color: "#58C4DC" },
+        { name: "TypeScript", color: "#2661B9" },
+        { name: "Material-UI", color: "#1976D2" },
+      ],
+    },
+    {
+      id: 3,
+      title: "Project 3",
+      description: "Description of Project 3",
+      img: "https://via.placeholder.com/300",
+      chips: [
+        { name: "React", color: "#58C4DC" },
+        { name: "TypeScript", color: "#2661B9" },
+        { name: "Material-UI", color: "#1976D2" },
+      ],
+    },
+    {
+      id: 4,
+      title: "Project 4",
+      description: "Description of Project 4",
+      img: "https://via.placeholder.com/300",
+      chips: [
+        { name: "React", color: "#58C4DC" },
+        { name: "TypeScript", color: "#2661B9" },
+        { name: "Material-UI", color: "#1976D2" },
+      ],
+    },
+    {
+      id: 5,
+      title: "Project 5",
+      description: "Description of Project 5",
+      img: "https://via.placeholder.com/300",
+      chips: [
+        { name: "React", color: "#58C4DC" },
+        { name: "TypeScript", color: "#2661B9" },
+        { name: "Material-UI", color: "#1976D2" },
+      ],
+    },
+    {
+      id: 6,
+      title: "Project 6",
+      description: "Description of Project 6",
+      img: "https://via.placeholder.com/300",
+      chips: [
+        { name: "React", color: "#58C4DC" },
+        { name: "TypeScript", color: "#2661B9" },
+        { name: "Material-UI", color: "#1976D2" },
+      ],
+    },
+  ];
+
   return (
-    <div className="gradient_background project_title_box" ref={ref}>
-      <motion.h1 initial={{ opacity: 0, y: -100 }} animate={inView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 1 }}>
+    <motion.div
+      className="gradient-background project-title-box"
+      ref={ref}
+      variants={containerVariants}
+      initial="hidden"
+      animate={inView ? "visible" : "hidden"}
+    >
+      <motion.h1 initial={{ opacity: 0, y: -150 }} animate={inView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 1 }}>
         Projects
       </motion.h1>
-    </div>
+
+      <Container maxWidth="lg" style={{ height: "100vh", overflowY: "auto", paddingTop: "20px" }}>
+        <Grid container spacing={3} justifyContent="center">
+          {projects.map((project) => (
+            <Grid item key={project.id} xs={12} sm={6} md={5} lg={4} style={{ display: "flex", justifyContent: "center" }}>
+              <ProjectItem title={project.title} description={project.description} img={project.img} chips={project.chips} />
+            </Grid>
+          ))}
+        </Grid>
+      </Container>
+    </motion.div>
   );
 }

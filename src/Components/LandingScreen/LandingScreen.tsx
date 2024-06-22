@@ -5,12 +5,12 @@ export default function LandingScreen() {
   const titleText = "I'm Luke Johnson".split(" ");
   const subHeadingText = "A Graduate from the University of Hull with a First Class Degree in Computer Science (Software Engineering)".split(" ");
   return (
-    <div className="gradient_background">
+    <div className="gradient-background">
       <div>
         <div>
           {titleText.map((el, i) => (
             <motion.span
-              className="top_bar_text"
+              className="top-bar-text"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{
@@ -26,7 +26,7 @@ export default function LandingScreen() {
         <div>
           {subHeadingText.map((el, i) => (
             <motion.span
-              className="top_bar_secondary_text"
+              className="top-bar-secondary-text"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{

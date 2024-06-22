@@ -1,0 +1,10 @@
+.project-item-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.chips-box {
+  padding-top: 1vh;
+}

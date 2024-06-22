@@ -1,6 +1,6 @@
-.project_title_box {
-  align-items: start;
-}
-
-.project_title {
+.project-title-box {
+  justify-content: space-between;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }

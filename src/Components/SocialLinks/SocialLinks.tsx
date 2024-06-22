@@ -5,7 +5,7 @@ import { IconButton, Tooltip } from "@mui/material";
 
 export default function SocialLinks() {
   return (
-    <div className="link_container">
+    <div className="link-container">
       <Tooltip title="Github">
         <IconButton href="https://github.com/LUKEJOHNSON2021" target="_blank">
           <FaGithub fontSize={40} color={"white"} />
