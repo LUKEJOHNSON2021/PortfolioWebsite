@@ -4,6 +4,7 @@ import { Container, Grid } from "@mui/material";
 import ProjectItem from "../ProjectItem/ProjectItem";
 
 import "./ProjectScreen.css";
+import portfolioWebsiteImg from "../../assets/PortfolioWebsite.png";
 
 const containerVariants = {
   hidden: { opacity: 0, scale: 0 },
@@ -29,7 +30,7 @@ export default function ProjectScreen() {
       id: 1,
       title: "Portfolio Website",
       description: "A portfolio website built to showcase my projects and skills.",
-      img: "https://via.placeholder.com/300",
+      img: portfolioWebsiteImg,
       chips: [
         { name: "React", color: "#58C4DC" },
         { name: "TypeScript", color: "#2661B9" },

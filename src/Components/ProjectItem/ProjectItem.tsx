@@ -1,4 +1,4 @@
-import { Box, Card, CardContent, CardMedia, Chip, IconButton, Tooltip, Typography } from "@mui/material";
+import { Card, CardContent, CardMedia, Chip, IconButton, Tooltip, Typography } from "@mui/material";
 import { motion } from "framer-motion";
 import { IChips } from "../../Interfaces/IChips";
 import { FaGithub } from "react-icons/fa";
@@ -38,7 +38,12 @@ export default function ProjectItem({ title, description, img, chips, link }: Pr
           width: "100%", // Ensures the card takes full width of its container
         }}
       >
-        <CardMedia component="img" image="https://via.placeholder.com/300" alt="Project Image" style={{ height: 200, width: 350 }} />
+        <CardMedia
+          component="img"
+          image={img}
+          alt="Project Image"
+          style={{ height: 200, width: 350, objectFit: "contain", transform: "scale(1.2)" }}
+        />
         <CardContent>
           <div className="project-item-container">
             <Typography variant="h5" color="textSecondary">
