@@ -32,4 +32,12 @@ body {
   width: 100%;
   height: 100%;
   color: white;
+  background: linear-gradient(90deg, #0f47f0, #02acfd);
+}
+
+#tsparticles {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: -1;
 }

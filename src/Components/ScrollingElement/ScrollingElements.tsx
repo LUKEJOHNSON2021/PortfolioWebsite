@@ -3,7 +3,7 @@ import "./ScrollingElements.css";
 
 import LandingScreen from "../LandingScreen/LandingScreen";
 import ProjectScreen from "../ProjectScreen/ProjectScreen";
-import Footer from "../Footer/Footer";
+import ContactScreen from "../ContactScreen/ContactScreen";
 
 export default function ScrollingElements() {
   useEffect(() => {
@@ -48,12 +48,7 @@ export default function ScrollingElements() {
           <ProjectScreen />
         </div>
         <div className="section section3">
-          <div className="contact">
-            <h1>Contact</h1>
-          </div>
-          <footer className="footer">
-            <Footer />
-          </footer>
+          <ContactScreen />
         </div>
       </div>
     </div>

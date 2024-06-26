@@ -1,0 +1,42 @@
+.contact {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 2rem;
+  width: 100%;
+}
+
+.contact h1 {
+  margin-bottom: 1rem;
+}
+
+.contact-form-container {
+  background: #fff;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  max-width: 500px;
+  width: 100%;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-form .MuiTextField-root {
+  margin-bottom: 1rem;
+}
+
+.contact-form .MuiButton-root {
+  align-self: center;
+  margin-top: 1rem;
+}
+
+.contact-form .MuiTextField-root:hover .MuiOutlinedInput-root .MuiOutlinedInput-notchedOutline {
+  border-color: #3f51b5;
+}
+
+.contact-form .MuiInputBase-input {
+  color: #333;
+}

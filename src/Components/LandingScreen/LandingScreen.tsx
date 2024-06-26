@@ -6,7 +6,7 @@ export default function LandingScreen() {
   const subHeadingText = "A Graduate from the University of Hull with a First Class Degree in Computer Science (Software Engineering)".split(" ");
   return (
     <div className="gradient-background">
-      <div>
+      <div className="title-bar">
         <div>
           {titleText.map((el, i) => (
             <motion.span

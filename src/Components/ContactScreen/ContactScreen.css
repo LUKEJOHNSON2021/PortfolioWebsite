@@ -1,0 +1,6 @@
+.footer {
+  display: flex;
+  flex: 0.1;
+  justify-content: space-around;
+  width: 100%;
+}

@@ -20,5 +20,5 @@ export default function MovingBackground() {
     console.log(container);
   };
 
-  return <>{init && <Particles id="tsparticles" particlesLoaded={particlesLoaded} options={particleConfig} style={{ zIndex: -1 }} />}</>;
+  return <>{init && <Particles id="tsparticles" particlesLoaded={particlesLoaded} options={particleConfig} />}</>;
 }
