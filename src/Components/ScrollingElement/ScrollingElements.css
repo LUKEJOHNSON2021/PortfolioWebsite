@@ -21,9 +21,3 @@ body {
 
 .section3 {
 }
-
-@media (max-width: 1200px) {
-  .section {
-    margin-bottom: 60px;
-  }
-}
