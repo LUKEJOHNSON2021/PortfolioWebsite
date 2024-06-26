@@ -7,14 +7,7 @@
 .link-container {
   display: flex;
   align-items: center;
-  justify-content: space-around;
+  justify-content: space-evenly;
   height: 8vh;
   width: 100%;
-}
-
-/* Screens smaller than 1200px have extra padding on the bottom */
-@media (max-width: 1200px) {
-  .link-container {
-    padding-bottom: 90px;
-  }
 }

@@ -25,9 +25,6 @@ export default function ContactScreen() {
   return (
     <motion.div className="contact-screen" ref={ref} variants={containerVariants} initial="hidden" animate={inView ? "visible" : "hidden"}>
       <ContactForm />
-      <footer className="footer">
-        <Footer />
-      </footer>
     </motion.div>
   );
 }

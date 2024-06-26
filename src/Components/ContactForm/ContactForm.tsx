@@ -4,6 +4,7 @@ import emailjs from "@emailjs/browser";
 import { motion } from "framer-motion";
 
 import "./ContactForm.css";
+import Footer from "../Footer/Footer";
 
 const ContactForm = () => {
   const [snackbarOpen, setSnackbarOpen] = useState(false);
@@ -57,6 +58,9 @@ const ContactForm = () => {
           </Button>
         </form>
       </Container>
+      <div className="footer-box">
+        <Footer />
+      </div>
       <Snackbar open={snackbarOpen} autoHideDuration={5000} onClose={handleSnackbarClose} anchorOrigin={{ vertical: "top", horizontal: "right" }}>
         <Alert onClose={handleSnackbarClose} severity={snackbarSeverity} variant="filled" sx={{ width: "100%" }}>
           {snackbarMessage}

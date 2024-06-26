@@ -41,3 +41,9 @@
 .contact-form .MuiInputBase-input {
   color: #333;
 }
+
+.footer-box {
+  width: 100%;
+  flex: 1;
+  z-index: 3;
+}
