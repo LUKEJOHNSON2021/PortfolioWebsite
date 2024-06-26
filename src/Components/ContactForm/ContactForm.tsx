@@ -1,18 +1,17 @@
-import React, { useRef, useState } from "react";
-import { Alert, Button, Container, Snackbar, TextField } from "@mui/material";
+import React, { useRef } from "react";
+import { Button, Container, TextField } from "@mui/material";
 import emailjs from "@emailjs/browser";
-import { motion } from "framer-motion";
 
 import "./ContactForm.css";
-import Footer from "../Footer/Footer";
 
-const ContactForm = () => {
-  const [snackbarOpen, setSnackbarOpen] = useState(false);
-  const [snackbarMessage, setSnackbarMessage] = useState("");
-  const [snackbarSeverity, setSnackbarSeverity] = useState<"success" | "error">("success");
+interface ContactFormProps {
+  setSnackbarOpen: React.Dispatch<React.SetStateAction<boolean>>;
+  setSnackbarMessage: React.Dispatch<React.SetStateAction<string>>;
+  setSnackbarSeverity: React.Dispatch<React.SetStateAction<"success" | "error">>;
+}
 
+const ContactForm = ({ setSnackbarMessage, setSnackbarOpen, setSnackbarSeverity }: ContactFormProps) => {
   const form = useRef<HTMLFormElement>(null);
-
   const sendEmail = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
@@ -39,34 +38,17 @@ const ContactForm = () => {
     e.currentTarget.reset();
   };
 
-  const handleSnackbarClose = () => {
-    setSnackbarOpen(false);
-  };
-
   return (
-    <div className="contact">
-      <motion.h1 initial={{ opacity: 0, y: -150 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 1 }}>
-        Contact Me
-      </motion.h1>
-      <Container className="contact-form-container">
-        <form ref={form} onSubmit={sendEmail} className="contact-form">
-          <TextField label="Name" name="user_name" fullWidth margin="normal" required />
-          <TextField label="Email" name="user_email" fullWidth margin="normal" type="email" required />
-          <TextField label="Message" name="message" fullWidth margin="normal" multiline rows={4} required />
-          <Button variant="contained" color="primary" type="submit">
-            Send
-          </Button>
-        </form>
-      </Container>
-      <div className="footer-box">
-        <Footer />
-      </div>
-      <Snackbar open={snackbarOpen} autoHideDuration={5000} onClose={handleSnackbarClose} anchorOrigin={{ vertical: "top", horizontal: "right" }}>
-        <Alert onClose={handleSnackbarClose} severity={snackbarSeverity} variant="filled" sx={{ width: "100%" }}>
-          {snackbarMessage}
-        </Alert>
-      </Snackbar>
-    </div>
+    <Container className="contact-form-container">
+      <form ref={form} onSubmit={sendEmail} className="contact-form">
+        <TextField label="Name" name="user_name" fullWidth margin="normal" required />
+        <TextField label="Email" name="user_email" fullWidth margin="normal" type="email" required />
+        <TextField label="Message" name="message" fullWidth margin="normal" multiline rows={4} required />
+        <Button variant="contained" color="primary" type="submit">
+          Send
+        </Button>
+      </form>
+    </Container>
   );
 };
 
