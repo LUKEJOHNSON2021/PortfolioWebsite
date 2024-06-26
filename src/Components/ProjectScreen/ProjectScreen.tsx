@@ -105,12 +105,6 @@ export default function ProjectScreen() {
     threshold: 0.1,
   });
 
-  const calculatePadding = () => {
-    const vh = window.innerHeight * 0.01;
-    const paddingValue = 20 * vh; // Adjust this multiplier as needed
-    return `${paddingValue}px`;
-  };
-
   return (
     <motion.div
       className="gradient-background project-title-box"
@@ -118,9 +112,6 @@ export default function ProjectScreen() {
       variants={containerVariants}
       initial="hidden"
       animate={inView ? "visible" : "hidden"}
-      style={{
-        height: "100%",
-      }}
     >
       <motion.h1 initial={{ opacity: 0, y: -150 }} animate={inView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 1 }}>
         Projects
@@ -128,8 +119,6 @@ export default function ProjectScreen() {
       <Container
         maxWidth="lg"
         style={{
-          height: "120vh",
-          paddingBottom: calculatePadding(), // Dynamic padding calculation
           paddingTop: "10px",
           overflow: "auto",
         }}
