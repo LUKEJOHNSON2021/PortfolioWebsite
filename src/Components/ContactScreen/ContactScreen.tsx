@@ -19,7 +19,7 @@ const containerVariants = {
 
 export default function ContactScreen() {
   const { ref, inView } = useInView({
-    triggerOnce: true,
+    triggerOnce: false,
     threshold: 0.1,
   });
   return (

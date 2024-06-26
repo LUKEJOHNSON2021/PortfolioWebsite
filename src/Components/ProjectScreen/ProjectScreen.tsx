@@ -9,6 +9,7 @@ import syncupmobileappImg from "../../assets/SyncUpMobileApp.png";
 import gameHubImg from "../../assets/Game-hubWebsite.png";
 import organizeTimeImg from "../../assets/OrganizeTimeLogo.png";
 import aspNetCoreImg from "../../assets/asp-net-core-web-api.png";
+import { useEffect, useRef } from "react";
 
 const containerVariants = {
   hidden: { opacity: 0, scale: 0 },
@@ -100,22 +101,43 @@ const projects = [
 ];
 
 export default function ProjectScreen() {
+  const headerRef = useRef<HTMLHeadingElement>(null); // Explicitly typed as HTMLHeadingElement
+  const gridRef = useRef<HTMLDivElement>(null); // Explicitly typed as HTMLDivElement
+
   const { ref, inView } = useInView({
-    triggerOnce: true,
+    triggerOnce: false,
     threshold: 0.1,
   });
+
+  useEffect(() => {
+    if (inView) {
+      console.log("Component is in view, scrolling to top...");
+      // Scroll to the top of the page when the component is in view
+      window.scrollTo({ top: 0, behavior: "smooth" });
+
+      // Reset the scroll position of the .projects-container to the top
+      if (gridRef.current) {
+        gridRef.current.scrollTop = 0;
+      }
+      if (headerRef.current instanceof HTMLElement) {
+        console.log("Resetting header scroll position...");
+        headerRef.current.scrollTop = 0;
+      }
+    }
+  }, [inView]);
 
   return (
     <motion.div className="project-title-box" ref={ref} variants={containerVariants} initial="hidden" animate={inView ? "visible" : "hidden"}>
       <motion.h1
-        initial={{ opacity: 0, y: -50 }} // Initial opacity set to 0 and initial y-position set to -50
-        animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: -50 }} // When in view, animate opacity to 1 and y-position to 0; otherwise, keep opacity at 0 and y-position at -50
+        initial={{ opacity: 0, y: 0 }} // Initial opacity set to 0 and initial y-position set to -50
+        animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 0 }} // When in view, animate opacity to 1 and y-position to 0; otherwise, keep opacity at 0 and y-position at -50
         transition={{ duration: 0.5, ease: "easeInOut" }} // Transition duration set to 0.5 seconds with easeInOut easing
+        ref={headerRef}
       >
         Projects
       </motion.h1>
 
-      <Container maxWidth="lg" className="projects-container">
+      <Container maxWidth="lg" className="projects-container" ref={gridRef}>
         <Grid container spacing={2} justifyContent="center">
           {projects.map((project) => (
             <Grid item key={project.id} xs={12} sm={6} md={4}>

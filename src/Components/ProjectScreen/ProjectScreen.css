@@ -1,9 +1,24 @@
 .project-title-box {
-  justify-content: space-between;
   display: flex;
   flex-direction: column;
   align-items: center;
   padding-bottom: 5rem;
+}
+
+.project-title-box h1 {
   display: flex;
-  min-height: 100vh;
+  top: 0;
+  background-color: transparent;
+  padding: 1rem; /* Adjust padding as needed */
+  z-index: 1000; /* Ensure it's above other content */
+}
+
+.projects-container {
+  overflow-y: auto;
+  max-height: calc(100vh - 5rem); /* Adjust to account for header height */
+  padding-top: 2rem; /* Ensure content starts below the fixed h1 */
+}
+
+.projects-container::-webkit-scrollbar {
+  display: none; /* Hide scrollbars if desired */
 }
