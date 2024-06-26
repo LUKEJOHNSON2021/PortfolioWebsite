@@ -11,7 +11,7 @@ const theme = createTheme({
   },
   palette: {
     background: {
-      default: "#0f47f0", // linear gradient for background
+      default: "#000000", // linear gradient for background
     },
     text: {
       primary: "#fff", // text color

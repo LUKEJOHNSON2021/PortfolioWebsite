@@ -27,7 +27,7 @@ export default function ScrollingElements() {
           top: newScrollPosition,
           behavior: "auto", // no smooth scroll
         });
-      }, 5000); // 1-second delay before snapping to the nearest section
+      }, 500000); // 1-second delay before snapping to the nearest section
     };
 
     container.addEventListener("scroll", handleScroll);

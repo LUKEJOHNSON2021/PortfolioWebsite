@@ -116,7 +116,13 @@ export default function ProjectScreen() {
       <motion.h1 initial={{ opacity: 0, y: -150 }} animate={inView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 1 }}>
         Projects
       </motion.h1>
-      <Container maxWidth="lg" style={{ height: "100vh", overflowY: "auto", paddingTop: "10px" }}>
+      <Container
+        maxWidth="lg"
+        style={{
+          height: "100vh",
+          paddingTop: "10px",
+        }}
+      >
         <Grid container spacing={2} justifyContent="center">
           {projects.map((project) => (
             <Grid item key={project.id} xs={12} sm={6} md={5} lg={4} style={{ display: "flex", justifyContent: "center" }}>

@@ -7,6 +7,8 @@
 body {
   font-family: "Rubik", sans-serif;
   overflow: hidden;
+  height: 100vh; /* Ensure the body takes up the entire viewport height */
+  overflow-y: auto;
 }
 
 .non-scrollable-background {
