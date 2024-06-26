@@ -38,10 +38,7 @@ const ContactForm = () => {
     e.currentTarget.reset();
   };
 
-  const handleSnackbarClose = (event?: React.SyntheticEvent | Event, reason?: string) => {
-    if (reason === "clickaway") {
-      return;
-    }
+  const handleSnackbarClose = () => {
     setSnackbarOpen(false);
   };
 
