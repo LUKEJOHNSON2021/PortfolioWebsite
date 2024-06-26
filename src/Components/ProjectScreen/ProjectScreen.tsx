@@ -121,6 +121,7 @@ export default function ProjectScreen() {
         style={{
           paddingTop: "10px",
           overflow: "auto",
+          paddingBottom: "100px",
         }}
       >
         <Grid container spacing={2} justifyContent="center">
