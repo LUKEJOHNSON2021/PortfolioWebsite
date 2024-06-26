@@ -120,7 +120,6 @@ export default function ProjectScreen() {
         gridRef.current.scrollTop = 0;
       }
       if (headerRef.current instanceof HTMLElement) {
-        console.log("Resetting header scroll position...");
         headerRef.current.scrollTop = 0;
       }
     }
