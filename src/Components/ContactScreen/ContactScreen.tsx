@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 
 import "./ContactScreen.css";
-import Footer from "../Footer/Footer";
+
 import ContactForm from "../ContactForm/ContactForm";
 
 const containerVariants = {
