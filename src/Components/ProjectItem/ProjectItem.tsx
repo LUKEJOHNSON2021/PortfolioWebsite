@@ -5,13 +5,14 @@ import { FaGithub } from "react-icons/fa";
 
 import "./ProjectItem.css";
 
-export const itemVariants = {
-  hidden: { opacity: 0, y: 20 },
+const containerVariants = {
+  hidden: { opacity: 0, scale: 0 },
   visible: {
     opacity: 1,
-    y: 0,
+    scale: 1,
     transition: {
-      duration: 0.5,
+      delayChildren: 0.3,
+      staggerChildren: 0.2,
     },
   },
 };
@@ -29,7 +30,7 @@ interface ProjectItemProps {
 
 export default function ProjectItem({ title, description, img, imgAlt, chips, link, websiteLink, scale }: ProjectItemProps) {
   return (
-    <motion.div variants={itemVariants} style={{ padding: 5, height: "100%", display: "flex", flexDirection: "column" }}>
+    <motion.div variants={containerVariants} style={{ padding: 5, height: "100%", display: "flex", flexDirection: "column" }}>
       <Card
         style={{
           height: "100%",

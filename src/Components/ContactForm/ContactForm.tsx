@@ -45,7 +45,7 @@ const ContactForm = () => {
   return (
     <div className="contact">
       <motion.h1 initial={{ opacity: 0, y: -150 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 1 }}>
-        Contacts
+        Contact Me
       </motion.h1>
       <Container className="contact-form-container">
         <form ref={form} onSubmit={sendEmail} className="contact-form">
