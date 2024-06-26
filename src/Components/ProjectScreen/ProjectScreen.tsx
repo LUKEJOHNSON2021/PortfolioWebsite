@@ -112,6 +112,9 @@ export default function ProjectScreen() {
       variants={containerVariants}
       initial="hidden"
       animate={inView ? "visible" : "hidden"}
+      style={{
+        height: "100%",
+      }}
     >
       <motion.h1 initial={{ opacity: 0, y: -150 }} animate={inView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 1 }}>
         Projects
@@ -119,8 +122,9 @@ export default function ProjectScreen() {
       <Container
         maxWidth="lg"
         style={{
-          height: "100vh",
+          height: "110vh",
           paddingTop: "10px",
+          overflow: "auto",
         }}
       >
         <Grid container spacing={2} justifyContent="center">
