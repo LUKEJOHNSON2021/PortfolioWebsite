@@ -17,6 +17,8 @@
   overflow-y: auto;
   max-height: calc(100vh - 5rem); /* Adjust to account for header height */
   padding-top: 2rem; /* Ensure content starts below the fixed h1 */
+  touch-action: manipulation; /* Improve touch responsiveness */
+  -webkit-overflow-scrolling: touch; /* Enable smooth scrolling on iOS */
 }
 
 .projects-container::-webkit-scrollbar {
