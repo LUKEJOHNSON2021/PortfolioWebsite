@@ -1,9 +1,33 @@
 import { motion } from "framer-motion";
 import "./LandingScreen.css";
+import { useEffect } from "react";
 
-export default function LandingScreen() {
+interface LandingScreenProps {
+  scrollToNext: () => void;
+}
+
+export default function LandingScreen({ scrollToNext }: LandingScreenProps) {
   const titleText = "I'm Luke Johnson".split(" ");
   const subHeadingText = "A Graduate from the University of Hull with a First Class Degree in Computer Science (Software Engineering)".split(" ");
+
+  const scrollThreshold = 100; // Adjust this value as needed to determine when to scroll
+
+  //Used for snapping to project screen when scrolling for cleaner look
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > scrollThreshold) {
+        scrollToNext();
+        window.removeEventListener("scroll", handleScroll); // Remove event listener after scrolling once
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll); // Cleanup: remove event listener on component unmount
+    };
+  }, [scrollToNext]);
+
   return (
     <div className="gradient-background">
       <div className="title-bar">

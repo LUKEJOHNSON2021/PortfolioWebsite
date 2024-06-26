@@ -1,12 +1,9 @@
 .project-item-container {
   display: flex;
-
   justify-content: space-between;
   flex-direction: row;
   align-items: center;
-
   width: 100%;
-  min-height: 50px;
 }
 
 .chips-box {

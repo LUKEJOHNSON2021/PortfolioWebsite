@@ -23,13 +23,7 @@ export default function ContactScreen() {
     threshold: 0.1,
   });
   return (
-    <motion.div
-      className="gradient-background project-title-box"
-      ref={ref}
-      variants={containerVariants}
-      initial="hidden"
-      animate={inView ? "visible" : "hidden"}
-    >
+    <motion.div className="contact-screen" ref={ref} variants={containerVariants} initial="hidden" animate={inView ? "visible" : "hidden"}>
       <ContactForm />
       <footer className="footer">
         <Footer />

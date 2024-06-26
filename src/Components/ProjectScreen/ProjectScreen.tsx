@@ -106,27 +106,19 @@ export default function ProjectScreen() {
   });
 
   return (
-    <motion.div
-      className="gradient-background project-title-box"
-      ref={ref}
-      variants={containerVariants}
-      initial="hidden"
-      animate={inView ? "visible" : "hidden"}
-    >
-      <motion.h1 initial={{ opacity: 0, y: -150 }} animate={inView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 1 }}>
+    <motion.div className="project-title-box" ref={ref} variants={containerVariants} initial="hidden" animate={inView ? "visible" : "hidden"}>
+      <motion.h1
+        initial={{ opacity: 0, y: -50 }} // Initial opacity set to 0 and initial y-position set to -50
+        animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: -50 }} // When in view, animate opacity to 1 and y-position to 0; otherwise, keep opacity at 0 and y-position at -50
+        transition={{ duration: 0.5, ease: "easeInOut" }} // Transition duration set to 0.5 seconds with easeInOut easing
+      >
         Projects
       </motion.h1>
-      <Container
-        maxWidth="lg"
-        style={{
-          paddingTop: "10px",
-          overflow: "auto",
-          paddingBottom: "100px",
-        }}
-      >
+
+      <Container maxWidth="lg" className="projects-container">
         <Grid container spacing={2} justifyContent="center">
           {projects.map((project) => (
-            <Grid item key={project.id} xs={12} sm={6} md={5} lg={4} style={{ display: "flex", justifyContent: "center" }}>
+            <Grid item key={project.id} xs={12} sm={6} md={4}>
               <ProjectItem
                 title={project.title}
                 description={project.description}

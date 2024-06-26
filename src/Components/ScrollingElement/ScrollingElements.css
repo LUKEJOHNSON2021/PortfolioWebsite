@@ -1,35 +1,33 @@
 body {
-  overflow: hidden;
+  font-family: "Rubik", sans-serif;
+  overflow: auto;
+  height: 100vh;
+  margin: 0;
+}
+
+.app {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
 }
 
 .scroll-container {
   height: 100vh;
   width: 100%;
   overflow-y: scroll;
+  scroll-behavior: auto;
   scroll-snap-type: y mandatory;
-  scroll-behavior: auto; /* Disable smooth scroll */
 }
 
 .section {
-  height: 100vh;
   scroll-snap-align: start;
+  min-height: 100vh;
+
+  box-sizing: border-box;
 }
 
-.section1 {
-}
-
-.section2 {
-}
-
-.section3 {
-  display: flex;
-  flex-direction: column;
-}
-
-.contact {
-  flex: 0.9;
-}
-
-.footer {
-  flex: 0.1;
+@media (max-width: 1200px) {
+  .section {
+    padding-bottom: 60px;
+  }
 }
