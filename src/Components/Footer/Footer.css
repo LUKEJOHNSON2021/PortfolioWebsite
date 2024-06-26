@@ -15,6 +15,6 @@
 /* Screens smaller than 1200px have extra padding on the bottom */
 @media (max-width: 1200px) {
   .link-container {
-    padding-bottom: 70px;
+    padding-bottom: 90px;
   }
 }

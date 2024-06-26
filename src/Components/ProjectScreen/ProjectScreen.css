@@ -22,3 +22,7 @@
 .projects-container::-webkit-scrollbar {
   display: none; /* Hide scrollbars if desired */
 }
+
+.project-grid {
+  padding-bottom: 30px;
+}

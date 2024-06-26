@@ -139,7 +139,7 @@ export default function ProjectScreen() {
       <Container maxWidth="lg" className="projects-container" ref={gridRef}>
         <Grid container spacing={2} justifyContent="center">
           {projects.map((project) => (
-            <Grid item key={project.id} xs={12} sm={6} md={4}>
+            <Grid item key={project.id} xs={12} sm={6} md={4} className="project-grid">
               <ProjectItem
                 title={project.title}
                 description={project.description}
