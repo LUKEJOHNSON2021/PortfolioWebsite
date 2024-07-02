@@ -10,6 +10,8 @@ import gameHubImg from "../../assets/Game-hubWebsite.png";
 import organizeTimeImg from "../../assets/OrganizeTimeLogo.png";
 import aspNetCoreImg from "../../assets/asp-net-core-web-api.png";
 import { useEffect, useRef } from "react";
+import { IProjectItem } from "../../Interfaces/IProjectItem";
+import PortfolioWebsiteModal from "../PortfolioWebsiteModal/PortfolioWebsiteModal";
 
 const containerVariants = {
   hidden: { opacity: 0, scale: 0 },
@@ -23,7 +25,7 @@ const containerVariants = {
   },
 };
 
-const projects = [
+const projects: IProjectItem[] = [
   {
     id: 1,
     title: "Portfolio Website",
@@ -38,6 +40,7 @@ const projects = [
     ],
     link: "https://github.com/LUKEJOHNSON2021/PortfolioWebsite",
     scale: 1.1,
+    modalInfo: <PortfolioWebsiteModal />,
   },
   {
     id: 2,
@@ -52,6 +55,7 @@ const projects = [
       { name: "UI-Design", color: "#8c19ff" },
     ],
     scale: 1.1,
+    modalInfo: <PortfolioWebsiteModal />,
   },
   {
     id: 3,
@@ -68,6 +72,7 @@ const projects = [
     link: "https://github.com/LUKEJOHNSON2021/Game-hub",
     websiteLink: "https://game-hub-tau-eight.vercel.app/",
     scale: 1.1,
+    modalInfo: <PortfolioWebsiteModal />,
   },
   {
     id: 4,
@@ -83,6 +88,7 @@ const projects = [
       { name: "Google-API", color: "#4285F4" },
     ],
     scale: 0.8,
+    modalInfo: <PortfolioWebsiteModal />,
   },
   {
     id: 5,
@@ -97,6 +103,7 @@ const projects = [
       { name: "Encryption", color: "#c91400" },
     ],
     scale: 0.9,
+    modalInfo: <PortfolioWebsiteModal />,
   },
 ];
 
@@ -134,6 +141,7 @@ export default function ProjectScreen() {
             {projects.map((project) => (
               <Grid item key={project.id} xs={12} sm={6} md={4} className="project-grid">
                 <ProjectItem
+                  id={project.id}
                   title={project.title}
                   description={project.description}
                   img={project.img}
@@ -141,6 +149,7 @@ export default function ProjectScreen() {
                   link={project.link}
                   websiteLink={project.websiteLink}
                   scale={project.scale}
+                  modalInfo={project.modalInfo}
                 />
               </Grid>
             ))}

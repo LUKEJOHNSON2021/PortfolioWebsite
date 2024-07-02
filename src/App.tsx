@@ -8,6 +8,9 @@ import ScrollingElements from "./Components/ScrollingElement/ScrollingElements";
 const theme = createTheme({
   typography: {
     fontFamily: "Rubik, sans-serif", // Custom font family
+    button: {
+      textTransform: "none", // Button text transform
+    },
   },
   palette: {
     background: {
