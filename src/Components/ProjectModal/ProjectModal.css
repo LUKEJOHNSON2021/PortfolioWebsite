@@ -19,6 +19,9 @@
   flex: 1;
   color: #000;
   overflow: auto;
+  &::-webkit-scrollbar {
+    display: none;
+  }
 }
 
 .modal-child-box {

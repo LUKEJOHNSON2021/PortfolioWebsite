@@ -28,33 +28,17 @@ export default function ProjectItem({ title, description, img, imgAlt, chips, li
   };
 
   return (
-    <motion.div variants={containerVariants} style={{ padding: 5, height: "100%", display: "flex", flexDirection: "column" }}>
-      <Button
-        style={{
-          height: "100%",
-          width: "100%",
-          textAlign: "left",
-        }}
-        onClick={handleClick}
-      >
-        <Card
-          style={{
-            height: "100%",
-            display: "flex",
-            flexDirection: "column",
-            justifyContent: "space-between",
-            borderWidth: 0,
-            boxShadow: "5px 15px 15px rgba(0, 0, 0, 0.3)",
-            width: "100%",
-          }}
-        >
+    <motion.div variants={containerVariants} className="project-item">
+      <Button className="button-style" onClick={handleClick}>
+        <Card className="card">
           <CardMedia
             component="img"
             image={img}
             alt={imgAlt ? imgAlt : "Project Image"}
+            className="card-media"
             style={{ height: 150, width: 250, objectFit: "contain", transform: `scale(${scale ? scale : 1})`, margin: "auto" }}
           />
-          <CardContent style={{ display: "flex", flexDirection: "column", flex: 1, justifyContent: "space-between" }}>
+          <CardContent className="card-content">
             <div className="project-item-text-box">
               <div className="project-item-container">
                 <Typography variant="h5" color="textSecondary">

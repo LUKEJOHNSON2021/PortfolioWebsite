@@ -10,13 +10,13 @@ export default function ScrollingElements() {
 
   return (
     <div className="scroll-container" ref={containerRef}>
-      <div className="section section1">
+      <div className="section">
         <LandingScreen />
       </div>
-      <div className="section section2">
+      <div className="section">
         <ProjectScreen />
       </div>
-      <div className="section section3">
+      <div className="section">
         <ContactScreen />
       </div>
     </div>

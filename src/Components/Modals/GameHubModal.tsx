@@ -40,8 +40,8 @@ export default function GameHubModal() {
         </div>
       </div>
       <div className={`container ${isSmallScreen ? "small-screen" : ""}`}>
-        <img src={GameHubMobile} alt="Game Hub Mobile" className={`image ${isSmallScreen ? "large" : "phone"}`} />
-        <img src={GameHubTablet} alt="Game Hub Tablet" className={`image ${isSmallScreen ? "large" : "tablet"}`} />
+        <img src={GameHubMobile} alt="Game Hub Mobile" className={`image ${isSmallScreen ? "large" : "phone"} boarder`} />
+        <img src={GameHubTablet} alt="Game Hub Tablet" className={`image ${isSmallScreen ? "large" : "tablet"} boarder`} />
         <img src={GameHubFull} alt="Game Hub Desktop" className={`image ${isSmallScreen ? "large" : "wider"}`} />
       </div>
     </div>

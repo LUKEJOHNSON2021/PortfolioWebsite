@@ -4,7 +4,7 @@ import "./LandingScreen.css";
 export default function LandingScreen() {
   const titleText = "I'm Luke Johnson".split(" ");
   const subHeadingText =
-    "A Graduate from the University of Hull with a First Class Bachelor of Science with Honours in Computer Science (Software Engineering)".split(
+    "A Graduate from the University of Hull with a First Class Bachelor of Science Degree with Honours in Computer Science (Software Engineering)".split(
       " "
     );
 

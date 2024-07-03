@@ -22,16 +22,11 @@ export default function SyncUpModal() {
         Sync-Up is currently in the final stages of development and will be available soon on both the App Store and Google Play Store.
       </Typography>
       <Spacer />
-
       <div className={`container ${isSmallScreen ? "small-screen" : ""}`}>
-        <div className="logo-container">
-          <img src={SyncUpLogo} alt="Sync-Up Logo" className="logo" />
-        </div>
-        <div className={`images-container ${isSmallScreen ? "small-screen" : ""}`}>
-          <img src={SyncUpHomePage} alt="Sync-Up Home Page" className={`image ${isSmallScreen ? "large" : ""}`} />
-          <img src={SyncUpEventPage} alt="Sync-Up Event Page" className={`image ${isSmallScreen ? "large" : ""}`} />
-          <img src={SyncUpOrgPage} alt="Sync-Up Organisation Page" className={`image ${isSmallScreen ? "large" : ""}`} />
-        </div>
+        <img src={SyncUpLogo} alt="Sync-Up Logo" className={`image ${isSmallScreen ? "large" : ""}`} />
+        <img src={SyncUpHomePage} alt="Sync-Up Home Page" className={`image ${isSmallScreen ? "large" : ""} boarder`} />
+        <img src={SyncUpEventPage} alt="Sync-Up Event Page" className={`image ${isSmallScreen ? "large" : ""}boarder`} />
+        <img src={SyncUpOrgPage} alt="Sync-Up Organisation Page" className={`image ${isSmallScreen ? "large" : ""}boarder`} />
       </div>
     </div>
   );

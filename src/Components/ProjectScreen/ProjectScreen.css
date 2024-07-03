@@ -41,33 +41,14 @@
 .container.small-screen {
   flex-direction: column;
   overflow-y: auto;
-  max-height: 80vh;
-}
-
-.logo-container {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-}
-
-.images-container {
-  display: flex;
-  align-items: center;
-  justify-content: space-evenly;
-  max-height: unset;
-  gap: 0;
-}
-
-.images-container.small-screen {
-  flex-direction: column;
-  max-height: 80vh;
-  gap: 10px;
 }
 
 .image {
   width: 20%;
   height: auto;
+}
+
+.boarder {
   border: 2px solid lightgrey;
 }
 
