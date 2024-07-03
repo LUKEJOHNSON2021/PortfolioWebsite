@@ -25,8 +25,8 @@ export default function SyncUpModal() {
       <div className={`container ${isSmallScreen ? "small-screen" : ""}`}>
         <img src={SyncUpLogo} alt="Sync-Up Logo" className={`image ${isSmallScreen ? "large" : ""}`} />
         <img src={SyncUpHomePage} alt="Sync-Up Home Page" className={`image ${isSmallScreen ? "large" : ""} boarder`} />
-        <img src={SyncUpEventPage} alt="Sync-Up Event Page" className={`image ${isSmallScreen ? "large" : ""}boarder`} />
-        <img src={SyncUpOrgPage} alt="Sync-Up Organisation Page" className={`image ${isSmallScreen ? "large" : ""}boarder`} />
+        <img src={SyncUpEventPage} alt="Sync-Up Event Page" className={`image ${isSmallScreen ? "large" : ""} boarder`} />
+        <img src={SyncUpOrgPage} alt="Sync-Up Organisation Page" className={`image ${isSmallScreen ? "large" : ""} boarder`} />
       </div>
     </div>
   );
