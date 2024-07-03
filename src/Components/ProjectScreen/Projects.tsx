@@ -5,9 +5,7 @@ import organizeTimeImg from "../../assets/OrganizeTimeLogo.png";
 import aspNetCoreImg from "../../assets/asp-net-core-web-api.png";
 
 import { IProjectItem } from "../../Interfaces/IProjectItem";
-import PortfolioWebsiteModal from "../PortfolioWebsiteModal/PortfolioWebsiteModal";
-import SyncUpModal from "../SyncUpModal/SyncUpModal";
-import GameHubModal from "../GameHubModal/GameHubModal";
+import { ASPNETModal, GameHubModal, OrganizeTimeModal, PortfolioWebsiteModal, SyncUpModal } from "../Modals";
 
 export const projects: IProjectItem[] = [
   {
@@ -72,7 +70,7 @@ export const projects: IProjectItem[] = [
       { name: "Google-API", color: "#4285F4" },
     ],
     scale: 0.8,
-    modalInfo: <PortfolioWebsiteModal />,
+    modalInfo: <OrganizeTimeModal />,
   },
   {
     id: 5,
@@ -87,6 +85,6 @@ export const projects: IProjectItem[] = [
       { name: "Encryption", color: "#c91400" },
     ],
     scale: 0.9,
-    modalInfo: <PortfolioWebsiteModal />,
+    modalInfo: <ASPNETModal />,
   },
 ];

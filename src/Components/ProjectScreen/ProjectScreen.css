@@ -25,3 +25,73 @@
 .project-grid {
   padding-bottom: 30px;
 }
+
+.container {
+  justify-content: space-evenly;
+  flex-direction: row;
+  overflow-y: unset;
+  align-items: center;
+  max-height: unset;
+  flex: 1;
+  display: flex;
+  gap: 10px;
+  overflow: auto;
+}
+
+.container.small-screen {
+  flex-direction: column;
+  overflow-y: auto;
+  max-height: 80vh;
+}
+
+.logo-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.images-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  max-height: unset;
+  gap: 0;
+}
+
+.images-container.small-screen {
+  flex-direction: column;
+  max-height: 80vh;
+  gap: 10px;
+}
+
+.image {
+  width: 20%;
+  height: auto;
+  border: 2px solid lightgrey;
+}
+
+.image.wider {
+  width: 75%;
+}
+.image.tablet {
+  width: 45%;
+}
+.image.phone {
+  width: 17.4%;
+}
+
+.image.large {
+  width: 80%;
+}
+
+.link-bar {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.logo {
+  width: 70%;
+  height: "auto";
+}

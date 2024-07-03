@@ -1,0 +1,29 @@
+.modal {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-box {
+  display: flex;
+  flex-direction: column;
+}
+
+.modal-title-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.modal-children {
+  flex: 1;
+  color: #000;
+  overflow: auto;
+}
+
+.modal-child-box {
+  overflow: auto;
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+}

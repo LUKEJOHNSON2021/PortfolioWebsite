@@ -1,6 +1,7 @@
 import { Box, Fade, Modal, Typography, styled, IconButton } from "@mui/material";
 import React from "react";
 import { IoMdClose } from "react-icons/io";
+import "./ProjectModal.css";
 
 interface ProjectModalProps {
   open: boolean;
@@ -35,11 +36,11 @@ export default function ProjectModal({ open, setModal, children, title }: Projec
       open={open}
       onClose={handleClose}
       closeAfterTransition
-      style={{ display: "flex", alignItems: "center", justifyContent: "center" }}
+      className="modal"
     >
       <Fade in={open}>
-        <ModalBox style={{ display: "flex", flexDirection: "column" }}>
-          <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
+        <ModalBox className="modal-box">
+          <div className="modal-title-row">
             <Typography variant="h3" id="transition-modal-title" color="#000">
               {title}
             </Typography>
@@ -49,7 +50,7 @@ export default function ProjectModal({ open, setModal, children, title }: Projec
               </IconButton>
             </div>
           </div>
-          <div style={{ flex: 1, color: "#000", overflow: "auto" }}>{children}</div>
+          <div className="modal-children">{children}</div>
         </ModalBox>
       </Fade>
     </Modal>
