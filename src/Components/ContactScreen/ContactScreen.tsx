@@ -2,10 +2,9 @@ import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 
 import "./ContactScreen.css";
-import ContactForm from "../ContactForm/ContactForm";
 import Footer from "../Footer/Footer";
-import { Alert, Snackbar } from "@mui/material";
-import { useState } from "react";
+import { Tooltip, IconButton } from "@mui/material";
+import { FaGlobe } from "react-icons/fa";
 
 const containerVariants = {
   hidden: { opacity: 0, scale: 0 },
@@ -20,31 +19,29 @@ const containerVariants = {
 };
 
 export default function ContactScreen() {
-  const [snackbarOpen, setSnackbarOpen] = useState(false);
-  const [snackbarMessage, setSnackbarMessage] = useState("");
-  const [snackbarSeverity, setSnackbarSeverity] = useState<"success" | "error">("success");
   const { ref, inView } = useInView({
     triggerOnce: false,
     threshold: 0.1,
   });
-  const handleSnackbarClose = () => {
-    setSnackbarOpen(false);
-  };
   return (
     <motion.div className="contact-screen" ref={ref} variants={containerVariants} initial="hidden" animate={inView ? "visible" : "hidden"}>
       <div className="contact">
-        <motion.h1 initial={{ opacity: 0, y: -150 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 1 }}>
-          Contact Me
-        </motion.h1>
-        <ContactForm setSnackbarMessage={setSnackbarMessage} setSnackbarOpen={setSnackbarOpen} setSnackbarSeverity={setSnackbarSeverity} />
-        <div className="footer-box">
-          <Footer />
+        <div>
+          <motion.h1 initial={{ opacity: 0, y: -150 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 1 }}>
+            Contact Me on my new Site or via LinkedIn
+          </motion.h1>
+          {/* Link to https://www.lukejohnsondev.com/ */}
+          <motion.div initial={{ opacity: 0, y: -150 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 1 }} className="contact-link">
+            <Tooltip title="Website">
+              <IconButton href="https://www.lukejohnsondev.com/" target="_blank">
+                <FaGlobe fontSize={40} color={"white"} />
+              </IconButton>
+            </Tooltip>
+          </motion.div>
         </div>
-        <Snackbar open={snackbarOpen} autoHideDuration={5000} onClose={handleSnackbarClose} anchorOrigin={{ vertical: "top", horizontal: "right" }}>
-          <Alert onClose={handleSnackbarClose} severity={snackbarSeverity} variant="filled" sx={{ width: "100%" }}>
-            {snackbarMessage}
-          </Alert>
-        </Snackbar>
+      </div>
+      <div className="footer-box">
+        <Footer />
       </div>
     </motion.div>
   );

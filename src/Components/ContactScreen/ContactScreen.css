@@ -9,3 +9,9 @@
   box-sizing: border-box;
   flex: 1;
 }
+
+.contact-link {
+  display: flex;
+  flex: 1;
+  justify-content: center;
+}
